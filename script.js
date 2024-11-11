@@ -1,6 +1,5 @@
-function choosediceimage()
-{    let diceimages =['images/dice1.png','images/dice2.png','images/dice3.png','images/dice4.png','images/dice5.png','images/dice6.png'];
-var randomnumber1 =Math.floor(Math.random()*6);
+let diceimages =['images/dice1.png','images/dice2.png','images/dice3.png','images/dice4.png','images/dice5.png','images/dice6.png'];
+function rollDice(){var randomnumber1 =Math.floor(Math.random()*6);
 var randomImage1 = diceimages[randomnumber1];
 var imgelement1 =document.querySelector(".img1");
 imgelement1.src =randomImage1 ;
@@ -12,14 +11,14 @@ imgelement2.src =randomImage2 ;
 console.log(randomImage2);
 if(randomnumber1>randomnumber2){
     var heading =document.querySelector("h1");
-    heading.innerHTML="Player1 Wins";
+    heading.innerHTML="🚩Player1 Wins";
 }
 else if (randomnumber1==randomnumber2){
     var heading =document.querySelector("h1");
-    heading.innerHTML="Draw";
+    heading.innerHTML="🚩Draw🚩";
 }
 else{
     var heading =document.querySelector("h1");
-    heading.innerHTML="Player2 Wins";
-}
-}
+    heading.innerHTML="Player2 Wins🚩";
+}}
+document.querySelector("h1").addEventListener("click", rollDice);
